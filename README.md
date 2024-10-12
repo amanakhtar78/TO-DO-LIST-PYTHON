@@ -1,6 +1,13 @@
 # Task Management Frontend
 
 This is a simple task management frontend built with **React.js**. It allows users to create, read, update, and delete (CRUD) tasks via interaction with a RESTful API.
+### VIDEO DEMO
+
+https://drive.google.com/file/d/1qx6zPalsxLCKCqTEaFtYhVjLHsAtH2Me/view
+
+### DOCUMENTATION 
+
+https://drive.google.com/file/d/1yZG3Uh1cUuyBC_NRt2Yp9_g2PXfRScG-/view
 
 ## Features
 
