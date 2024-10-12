@@ -39,7 +39,7 @@ npm install
 or
 yarn install
 ```
-### 7. Run the development server
+### 3. Run the development server
 
 To start the app in development mode, use:
 
