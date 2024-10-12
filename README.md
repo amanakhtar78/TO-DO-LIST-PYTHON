@@ -91,6 +91,8 @@ For additional custom styling.
 ### 1. Create and activate a virtual environment
 
 ```bash
+cd backend
+
 python -m venv venv
 source venv/bin/activate   # On macOS/Linux
 # or
@@ -101,21 +103,24 @@ venv\Scripts\activate      # On Windows
    Install all required Python packages:
 
 ```bash
+
 pip install -r requirements.txt
 ```
 
 Dependencies include:
 
 Flask: Core web framework
+
 Flask-CORS: Handling Cross-Origin Resource Sharing (CORS)
+
 Flasgger: For Swagger API documentation
+
 SQLite: For the lightweight database
 
 
 ### 3. Running the application
 
 ```bash
-cd backend
 python app.py
 ```
 The application will start running on http://localhost:5000.
