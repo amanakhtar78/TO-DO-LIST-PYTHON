@@ -8,8 +8,7 @@ def create_app():
     app = Flask(__name__, instance_relative_config=True)
 
     # Load configuration from environment variables
-    app.config.from_mapping(
-        SECRET_KEY='your_secret_key_here',
+    app.config.from_mapping(      
         FLASK_ENV='development',
         FLASK_DEBUG=True
     )

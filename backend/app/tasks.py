@@ -68,10 +68,13 @@ def create_task():
 
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO tasks (title, description) VALUES (?, ?)", (title, description))
+    cursor.execute("""
+        INSERT INTO tasks (title, description, created_at, updated_at) 
+        VALUES (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    """, (title, description))
     conn.commit()
-    return jsonify({"message": "Task created", "id": cursor.lastrowid}), 201
 
+    return jsonify({"message": "Task created", "id": cursor.lastrowid}), 201
 @tasks_bp.route('/<int:id>', methods=['PUT'])
 def update_task(id):
     """
@@ -107,8 +110,17 @@ def update_task(id):
 
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("UPDATE tasks SET title = ?, description = ? WHERE id = ?", (title, description, id))
+    cursor.execute("""
+        UPDATE tasks 
+        SET title = ?, description = ?, updated_at = CURRENT_TIMESTAMP 
+        WHERE id = ?
+    """, (title, description, id))
     conn.commit()
+
+    # Check if any row was actually updated
+    if cursor.rowcount == 0:
+        return jsonify({"error": "Task not found"}), 404
+
     return jsonify({"message": "Task updated"}), 200
 
 @tasks_bp.route('/<int:id>', methods=['DELETE'])
