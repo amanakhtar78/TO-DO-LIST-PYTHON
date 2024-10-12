@@ -25,8 +25,8 @@ Before running this project, ensure that you have the following installed:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/task-management-frontend.git
-cd task-management-frontend
+git clone https://github.com/amanakhtar78/TO-DO-LIST-PYTHON.git
+cd frontend
 
 ```
 
@@ -39,60 +39,6 @@ npm install
 or
 yarn install
 ```
-
-### 3. Install Tailwind CSS
-
-Tailwind CSS is used for styling the app. To install and configure it, follow these steps:
-
-```bash
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init
-```
-
-Then, update the tailwind.config.js file as follows:
-
-```bash
-module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-In your src/index.css, add the following Tailwind imports:
-
-```bash
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-### 4. Install Axios
-
-Axios is used to make HTTP requests to the backend API. To install it, run the following command:
-
-```bash
-npm install axios
-```
-
-### 5. Install React Router DOM
-
-React Router DOM is used for handling routing in the React application. Install it using:
-
-```bash
-npm install react-router-dom
-```
-
-### 6. Set up environment variables (optional)
-
-If your backend API runs on a different URL than http://localhost:5000, update the base URL in your API calls within the React components (App.js, EditTask.js, etc.).
-
 ### 7. Run the development server
 
 To start the app in development mode, use:
@@ -109,12 +55,12 @@ Project Structure
 
 ```bash
 src/
-├── components/ # Reusable components like Loading
-|   |-- CreateTask.js # Component for creating new tasks
-|   |-- EditTask.js # Component for editing existing tasks
-├── App.js # Main app file
-├── index.js # Entry point for React
-├── App.css # Styling file for the app
+├── components/ 
+|   |-- CreateTask.js 
+|   |-- EditTask.js 
+├── App.js 
+├── index.js
+├── App.css 
 
 ```
 
@@ -151,11 +97,10 @@ source venv/bin/activate   # On macOS/Linux
 venv\Scripts\activate      # On Windows
 ```
 
-3. Install dependencies
+### 2. Install dependencies
    Install all required Python packages:
 
 ```bash
-Copy code
 pip install -r requirements.txt
 ```
 
@@ -166,55 +111,38 @@ Flask-CORS: Handling Cross-Origin Resource Sharing (CORS)
 Flasgger: For Swagger API documentation
 SQLite: For the lightweight database
 
-### 4. Initialize the database
 
-To set up the SQLite database schema, run:
-
-```bash
-flask shell
-Then run:
-
-python
-
-from your_project_name.db import init_db
-init_db()
-This will create the task_manager.db file and the required tasks table based on the provided schema.
-```
-
-### 5. Running the application
-
-To run the Flask application in development mode, use:
+### 3. Running the application
 
 ```bash
-Copy code
-flask run
-Alternatively, run directly using Python:
-```
-
-```bash
+cd backend
 python app.py
-The application will start running on http://localhost:5000.
 ```
+The application will start running on http://localhost:5000.
 
 Application Structure
 
 ```bash
-Copy code
 task-management-backend/
   ├── app/
-      ├── db.py                  # Task Blueprint (API routes for managing tasks)
-      ├── __init__.py                  # Task Blueprint (API routes for managing tasks)
-      ├── tasks.py                  # Task Blueprint (API routes for managing tasks)
-      ├── schema.sql                # SQLite schema for tasks table
+      ├── db.py              
+      ├── __init__.py        
+      ├── tasks.py           
+      ├── schema.sql         
   ├── instance/
-  |   |-- task_manager.db                    # Instance folder containing the SQLite database
-  ├── run.py                    # Application entry point
+  |   |-- task_manager.db    
+  ├── run.py                 
   └── requirements.txt
   |-- backend/swagger.json
 
 ```
+## API SWAGGER DOCUMENT 
 
-API Endpoints
+```bash
+http://localhost:5000/apidocs/
+```
+
+# API Endpoints
 
 ### GET /api/tasks/
 
